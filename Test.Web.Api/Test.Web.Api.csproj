@@ -19,22 +19,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="Microsoft.EntityFrameworkCore.SqlServer" />
-    <None Remove="Context\" />
-    <None Remove="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" />
-    <None Remove="Model\" />
-    <None Remove="Microsoft.EntityFrameworkCore.Design" />
-    <None Remove="EFCore.BulkExtensions" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Context\" />
     <Folder Include="Model\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Update="Properties\launchSettings.json">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
+    <None Remove="Properties\launchSettings.json" />
   </ItemGroup>
 </Project>

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
-using EFCore.BulkExtensions;
 using Microsoft.EntityFrameworkCore;
+using EFCore.BulkExtensions;
 using Test.Web.Api.Context;
 using Test.Web.Api.Model;
 

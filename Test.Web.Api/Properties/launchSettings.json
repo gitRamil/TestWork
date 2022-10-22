@@ -1,8 +1,4 @@
 {
-  "iisSettings": {
-    "windowsAuthentication": false,
-    "anonymousAuthentication": true
-  },
   "profiles": {
     "Test.Web.Api": {
       "commandName": "Project",

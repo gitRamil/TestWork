@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Test.Web.Api.Model;
+﻿namespace Test.Web.Api.Model;
 
 public class Product : BaseAuditEntity
 {

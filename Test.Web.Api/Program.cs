@@ -12,7 +12,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("ConnectionString")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("productDB")));
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 

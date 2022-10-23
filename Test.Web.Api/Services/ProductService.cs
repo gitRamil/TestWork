@@ -41,10 +41,13 @@ public class ProductService : IProductService
         return productCategories;
     }
 
-    public async Task<List<Product>> GetProductsAsync(CancellationToken cancellationToken)
+    public async Task<List<Product>> GetProductsByCategoryAsync(Guid productCategoryId, CancellationToken cancellationToken)
     {
         Start = DateTime.Now;
-        var products = await _dbContext.Product.ToListAsync();
+        var products = await _dbContext.Product
+            .Where(x => x.ProductCategory.Id == productCategoryId)
+            .Include(x => x.ProductCategory)
+            .ToListAsync();
 
         TimeSpan = DateTime.Now - Start;
 

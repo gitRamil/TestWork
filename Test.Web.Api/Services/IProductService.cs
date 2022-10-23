@@ -8,7 +8,7 @@ public interface IProductService
 {
     Task<TimeSpan> AddDataAsync(int productsCount, int productCategories, CancellationToken cancellationToken);
 
-    Task<List<Product>> GetProductsAsync(CancellationToken cancellationToken);
-
     Task<List<ProductCategory>> GetProductCategoriesAsync(CancellationToken cancellationToken);
+
+    Task<List<Product>> GetProductsByCategoryAsync(Guid productCategoryId, CancellationToken cancellationToken);
 }

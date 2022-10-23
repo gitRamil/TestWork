@@ -11,6 +11,8 @@ namespace Test.Web.Api.Controllers;
 public class ProductsController : ControllerBase
 {
     private readonly IProductService _service;
+    private const int _productCountDefault = 1000000;
+    private const int _productCategoryCountDefault = 50;
 
     public ProductsController(IProductService service)
     {
@@ -19,7 +21,9 @@ public class ProductsController : ControllerBase
 
     [Route("[action]")]
     [HttpPost]
-    public async Task<ActionResult> AddDataAsync(int productCount, int productCategoriesCount, CancellationToken cancellationToken)
+    public async Task<ActionResult> AddDataAsync(CancellationToken cancellationToken,
+        int productCount = _productCountDefault,
+        int productCategoriesCount = _productCategoryCountDefault)
     {
         var result = await _service.AddDataAsync(productCount, productCategoriesCount, cancellationToken);
 
@@ -37,9 +41,9 @@ public class ProductsController : ControllerBase
 
     [Route("[action]")]
     [HttpGet]
-    public async Task<ActionResult> GetProductsAsync(CancellationToken cancellationToken)
+    public async Task<ActionResult> GetProductsByCategoryAsync(Guid productCategoryId, CancellationToken cancellationToken)
     {
-        var result = await _service.GetProductsAsync(cancellationToken);
+        var result = await _service.GetProductsByCategoryAsync(productCategoryId, cancellationToken);
 
         return Ok(result);
     }

@@ -17,14 +17,25 @@ public class ProductsController : ControllerBase
         _service = service;
     }
 
+    [Route("[action]")]
     [HttpPost]
-    public async Task<ActionResult> AddDataAsync(int productCounts, CancellationToken cancellationToken)
+    public async Task<ActionResult> AddDataAsync(int productCount, int productCategoriesCount, CancellationToken cancellationToken)
     {
-        var result = await _service.AddDataAsync(productCounts, cancellationToken);
+        var result = await _service.AddDataAsync(productCount, productCategoriesCount, cancellationToken);
 
         return Ok(result);
     }
 
+    [Route("[action]")]
+    [HttpGet]
+    public async Task<ActionResult> GetProductCategoriesAsync(CancellationToken cancellationToken)
+    {
+        var result = await _service.GetProductCategoriesAsync(cancellationToken);
+
+        return Ok(result);
+    }
+
+    [Route("[action]")]
     [HttpGet]
     public async Task<ActionResult> GetProductsAsync(CancellationToken cancellationToken)
     {

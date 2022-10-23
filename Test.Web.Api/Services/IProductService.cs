@@ -6,7 +6,9 @@ namespace Test.Web.Api.Services;
 
 public interface IProductService
 {
+    Task<TimeSpan> AddDataAsync(int productsCount, int productCategories, CancellationToken cancellationToken);
+
     Task<List<Product>> GetProductsAsync(CancellationToken cancellationToken);
 
-    Task<TimeSpan> AddDataAsync(int count, CancellationToken cancellationToken);
+    Task<List<ProductCategory>> GetProductCategoriesAsync(CancellationToken cancellationToken);
 }

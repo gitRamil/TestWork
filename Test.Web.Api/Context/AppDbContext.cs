@@ -19,7 +19,6 @@ public class AppDbContext : DbContext
     }
     #endregion
 
-
     #region События
     public override async Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = new CancellationToken())
     {

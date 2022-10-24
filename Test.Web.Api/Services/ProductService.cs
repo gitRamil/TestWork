@@ -1,9 +1,14 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using System.Reflection;
+using Microsoft.EntityFrameworkCore;
 using EFCore.BulkExtensions;
 using Test.Web.Api.Context;
+using Test.Web.Api.Model;
+using System.Collections.Generic;
+using System.Collections;
+using Test.Web.Api.SupportFiles;
 using Test.Web.Api.DTOs;
 using Test.Web.Api.MapProfiles;
-using Test.Web.Api.SupportFiles;
 
 namespace Test.Web.Api.Services;
 
@@ -54,15 +59,5 @@ public class ProductService : IProductService
         TimeSpan = DateTime.Now - Start;
 
         return products;
-    }
-
-    Task<List<ProductCategoryDto>> IProductService.GetProductCategoriesAsync(CancellationToken cancellationToken)
-    {
-        throw new NotImplementedException();
-    }
-
-    Task<List<ProductDto>> IProductService.GetProductsByCategoryAsync(Guid productCategoryId, CancellationToken cancellationToken)
-    {
-        throw new NotImplementedException();
     }
 }

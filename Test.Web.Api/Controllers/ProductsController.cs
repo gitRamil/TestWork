@@ -2,6 +2,7 @@
 using System.Threading;
 using Microsoft.AspNetCore.Mvc;
 using Test.Web.Api.Context;
+using Test.Web.Api.DTOs;
 using Test.Web.Api.Services;
 
 namespace Test.Web.Api.Controllers;
@@ -32,7 +33,7 @@ public class ProductsController : ControllerBase
 
     [Route("[action]")]
     [HttpGet]
-    public async Task<ActionResult> GetProductCategoriesAsync(CancellationToken cancellationToken)
+    public async Task<ActionResult<List<ProductCategoryDto>>> GetProductCategoriesAsync(CancellationToken cancellationToken)
     {
         var result = await _service.GetProductCategoriesAsync(cancellationToken);
 
@@ -41,7 +42,7 @@ public class ProductsController : ControllerBase
 
     [Route("[action]")]
     [HttpGet]
-    public async Task<ActionResult> GetProductsByCategoryAsync(Guid productCategoryId, CancellationToken cancellationToken)
+    public async Task<ActionResult<List<ProductDto>>> GetProductsByCategoryAsync(Guid productCategoryId, CancellationToken cancellationToken)
     {
         var result = await _service.GetProductsByCategoryAsync(productCategoryId, cancellationToken);
 

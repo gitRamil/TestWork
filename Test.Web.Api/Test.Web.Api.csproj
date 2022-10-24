@@ -11,10 +11,12 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.10" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.10" />
     <PackageReference Include="EFCore.BulkExtensions" Version="6.5.6" />
+    <PackageReference Include="Riok.Mapperly" Version="2.5.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Context\" />
     <Folder Include="SupportFiles\" />
+    <Folder Include="MapProfiles\" />
   </ItemGroup>
 </Project>

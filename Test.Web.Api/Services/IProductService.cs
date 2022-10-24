@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Test.Web.Api.DTOs;
+﻿using Test.Web.Api.DTOs;
 
 namespace Test.Web.Api.Services;
 

@@ -1,7 +1,4 @@
-﻿using System.Net.Mime;
-using System.Threading;
-using Microsoft.AspNetCore.Mvc;
-using Test.Web.Api.Context;
+﻿using Microsoft.AspNetCore.Mvc;
 using Test.Web.Api.DTOs;
 using Test.Web.Api.Services;
 

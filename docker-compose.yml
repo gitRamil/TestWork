@@ -1,7 +1,7 @@
 version: "3.4"
 
 services:
-    api:
+    test-web-api:
         build:
           context: .
           dockerfile: test.web.api/Dockerfile
@@ -9,7 +9,8 @@ services:
           - "8080:80"
         depends_on:
           - db
-    api2:
+
+    jwt-service:
         build:
           context: .
           dockerfile: JWTService/Dockerfile

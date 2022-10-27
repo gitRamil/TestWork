@@ -9,6 +9,12 @@ services:
           - "8080:80"
         depends_on:
           - db
+    api2:
+        build:
+          context: .
+          dockerfile: JWTService/Dockerfile
+        ports:
+          - "8090:80"
 
     db:
         image: "mcr.microsoft.com/mssql/server:2022-latest"

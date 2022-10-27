@@ -4,7 +4,7 @@ services:
     api:
         build:
           context: .
-          dockerfile: Dockerfile
+          dockerfile: test.web.api/Dockerfile
         ports:
           - "8080:80"
         depends_on:
